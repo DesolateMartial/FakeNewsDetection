@@ -1,56 +1,70 @@
 # 📰 Fake News Detection System
 
-This project is a Fake News Detection web app built using **Flask** and **Machine Learning**. It classifies news articles as **FAKE** or **REAL** based on the content.
+This project is a machine learning-based web application that detects whether a news article is **fake** or **real** based on its content.
 
-## 📂 Features
-- Train a Logistic Regression model using TF-IDF vectorization
-- Use real-world news data
-- Simple web interface to enter custom news text
-- Real-time classification
+## 🚀 Features
+- Train a text classification model using TF-IDF and Logistic Regression
+- Input raw news text and classify it in real-time
+- Lightweight Flask web interface
 
-## 🔧 Installation
+## 🧰 Tech Stack
+- Python
+- Flask (Web framework)
+- scikit-learn (Machine Learning)
+- pandas (Data handling)
+- joblib (Model persistence)
+
+## 📁 Folder Structure
+```
+fake-news-detector/
+├── data/                     # Dataset CSV (to be added)
+├── models/                   # Trained ML model (generated after training)
+├── app/                      # Flask web application
+│   ├── app.py
+│   └── templates/
+│       └── index.html
+├── train_model.py            # Model training script
+├── requirements.txt          # Python dependencies
+└── README.md                 # Project documentation
+```
+
+## 📦 Installation
+1. **Clone the repository**
 ```bash
-# Clone the repository
-https://github.com/yourusername/fake-news-detector.git
+git clone https://github.com/yourusername/fake-news-detector.git
 cd fake-news-detector
+```
 
-# Create virtual environment
+2. **Create and activate a virtual environment**
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+source venv/bin/activate      # Windows: venv\Scripts\activate
+```
 
-# Install dependencies
+3. **Install the dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-# Train the model
+4. **Add the dataset**
+Download the dataset from [Kaggle - Fake and Real News Dataset](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset) and place `fake_or_real_news.csv` inside the `data/` directory.
+
+5. **Train the model**
+```bash
 python train_model.py
+```
 
-# Run the web app
+6. **Run the web app**
+```bash
 cd app
 python app.py
 ```
 
+Visit `http://127.0.0.1:5000/` in your browser to use the app.
+
 ## 📊 Dataset
-Used: [Kaggle Fake and Real News Dataset](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset)
-
-## 📁 Project Structure
-```
-fake-news-detector/
-├── data/
-│   └── fake_or_real_news.csv
-├── models/
-│   └── logistic_model.pkl
-├── app/
-│   ├── app.py
-│   └── templates/
-│       └── index.html
-├── train_model.py
-├── requirements.txt
-└── README.md
-```
-
-## 🧠 Model
-- TF-IDF for vectorization
-- Logistic Regression for classification
+- **Source**: Kaggle
+- **Link**: https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset
 
 ## 📜 License
 MIT License
